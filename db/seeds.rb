@@ -2,6 +2,7 @@
 
 require 'rest-client'
 
+RecipeMenu.destroy_all
 Recipe.destroy_all
 Menu.destroy_all
 
