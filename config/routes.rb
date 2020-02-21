@@ -7,9 +7,11 @@ Rails.application.routes.draw do
   get 'menus/show'
   get 'foodgroups/index'
   get 'foodgroups/show'
+
+  # GET / => recipes#index
   get 'recipes/index'
-  get 'recipes/show'
-  get 'welcome/index'
+
+  get 'recipes/:id', to: 'recipes#show', id: /\d+/
 
   root 'welcome#index'
 end
