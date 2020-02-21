@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_02_20_205536) do
+ActiveRecord::Schema.define(version: 2020_02_21_230146) do
 
   create_table "foodgroups", force: :cascade do |t|
     t.string "name"
@@ -51,7 +51,9 @@ ActiveRecord::Schema.define(version: 2020_02_20_205536) do
     t.string "restaurant_name"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["menu_id", "recipe_id"], name: "index_recipe_menus_on_menu_id_and_recipe_id", unique: true
     t.index ["menu_id"], name: "index_recipe_menus_on_menu_id"
+    t.index ["recipe_id", "menu_id"], name: "index_recipe_menus_on_recipe_id_and_menu_id", unique: true
     t.index ["recipe_id"], name: "index_recipe_menus_on_recipe_id"
   end
 
