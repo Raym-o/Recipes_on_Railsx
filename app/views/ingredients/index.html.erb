@@ -1,2 +1,9 @@
-<h1>Ingredients#index</h1>
-<p>Find me in app/views/ingredients/index.html.erb</p>
+<% if @ingredients.empty? %>
+ <p>There are no ingredients available to preview.</p>
+<% else %>
+  <% @ingredients.each do |ingredient| %>
+    <h2><%= ingredient.name %></h2>
+    <p><%= ingredient.description %></p>
+    <p>This ingredient is found in <%= ingredient.recipes.count %> recipes.</p>
+  <% end %>
+<% end %>

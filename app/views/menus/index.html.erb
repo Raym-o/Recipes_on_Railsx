@@ -1,2 +1,9 @@
-<h1>Menus#index</h1>
-<p>Find me in app/views/menus/index.html.erb</p>
+<% if @menus.empty? %>
+ <p>There are no menus available to preview.</p>
+<% else %>
+  <% @menus.each do |menu| %>
+    <h2><%= menu.name %></h2>
+    <p><%= menu.description %></p>
+    <p>This menu contains <%= menu.recipes.count %> recipes.</p>
+  <% end %>
+<% end %>

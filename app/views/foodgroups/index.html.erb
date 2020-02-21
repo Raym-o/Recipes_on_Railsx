@@ -1,2 +1,9 @@
-<h1>Foodgroups#index</h1>
-<p>Find me in app/views/foodgroups/index.html.erb</p>
+<% if @foodgroups.empty? %>
+ <p>There are no foodgroups available to preview.</p>
+<% else %>
+  <% @foodgroups.each do |foodgroup| %>
+    <h2><%= foodgroup.name %></h2>
+    <p><%= foodgroup.suggested_serving %></p>
+    <p>This foodgroup is found contains <%= foodgroup.ingredients.count %> ingredients.</p>
+  <% end %>
+<% end %>
