@@ -1,3 +1,16 @@
-<h2>Requested Ingredient</h2>
-<h3><%= @ingredient.name %></h3>
+<h1>Requested Ingredient</h1>
+<h2><%= @ingredient.name %></h2>
 <p><%= @ingredient.description %></p>
+
+<h2>This ingredient belongs to the <%= @ingredient.foodgroup.name %> foodgroup.</h2>
+
+<h3>Recipes using this Ingredient</h3>
+<% if @ingredient.recipes.empty? %>
+  <p>There are no recipes to display</p>
+<% else %>
+  <ul>
+    <% @ingredient.recipes.each do |recipe| %>
+      <li><%= recipe.name %></li>
+    <% end %>
+  </ul>
+<% end %>

@@ -1,3 +1,14 @@
 <h2>Requested Foodgroup</h2>
 <h3><%= @foodgroup.name %></h3>
 <p><%= @foodgroup.suggested_serving %></p>
+<br>
+<h3>Ingredients from this Foodgroup</h3>
+<% if @foodgroup.ingredients.empty? %>
+  <p>There are no ingredients to display</p>
+<% else %>
+  <ul>
+    <% @foodgroup.ingredients.each do |ingredient| %>
+      <li><%= ingredient.name %></li>
+    <% end %>
+  </ul>
+<% end %>

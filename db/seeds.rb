@@ -10,12 +10,12 @@ Ingredient.destroy_all
 Foodgroup.destroy_all
 
 FOOD_GROUPS = [
-  { name: 'vegetables', suggested_serving: '2 to 3 cups' },
-  { name: 'fruits', suggested_serving: '1.5 to 2 cups' },
-  { name: 'grains', suggested_serving: '5 to 8 ounces' },
-  { name: 'dairy', suggested_serving: '3 cups fat-free or low fat' },
-  { name: 'protein', suggested_serving: '5 to 6.5 ounces' },
-  { name: 'oils', suggested_serving: '5 to 7 teaspoons' }
+  { name: 'Vegetables', suggested_serving: '2 to 3 cups' },
+  { name: 'Fruits', suggested_serving: '1.5 to 2 cups' },
+  { name: 'Grains', suggested_serving: '5 to 8 ounces' },
+  { name: 'Dairy', suggested_serving: '3 cups fat-free or low fat' },
+  { name: 'Protein', suggested_serving: '5 to 6.5 ounces' },
+  { name: 'Oils', suggested_serving: '5 to 7 teaspoons' }
 ].freeze
 
 FOOD_GROUPS.each do |food|
@@ -33,8 +33,9 @@ end
     rec = Recipe.create(name: datum['title'], description: datum['ingredients'])
     array = datum['ingredients'].split(', ')
     array.each do |index|
-      ing = Ingredient.create(name: index, foodgroup: foodgrp)
-      RecipeIngredient.create(recipe: rec, ingredient: ing) unless ing.id.nil?
+      Ingredient.create(name: index, foodgroup: foodgrp)
+      ing = Ingredient.find_by_name(index)
+      RecipeIngredient.create(recipe: rec, ingredient: ing) unless ing.nil?
     end
   end
 end
