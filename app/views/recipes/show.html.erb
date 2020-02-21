@@ -1,3 +1,14 @@
 <h2>Requested Recipe</h2>
 <h3><%= @recipe.name %></h3>
 <p><%= @recipe.description %></p>
+
+<h3>Menus including this Recipe</h3>
+<% if @recipe.menus.empty? %>
+  <p>There are no menus to display</p>
+<% else %>
+  <ul>
+    <% @recipe.menus.each do |rec| %>
+      <li><%= rec.name %></li>
+    <% end %>
+  </ul>
+<% end %>
