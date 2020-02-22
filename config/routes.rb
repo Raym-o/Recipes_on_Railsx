@@ -23,7 +23,7 @@ Rails.application.routes.draw do
   get 'recipes/index'
 
   # GET /recipes/1 => recipes#show
-  get 'recipes/:id', to: 'recipes#show', id: /\d+/
+  get 'recipes/:id', to: 'recipes#show', id: /\d+/, as: 'recipe'
 
   # GET / => welcome#show
   root 'welcome#index'

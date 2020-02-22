@@ -1,9 +1,9 @@
 <% if @recipes.empty? %>
  <p>There are no recipes available to preview.</p>
 <% else %>
-  <% @recipes.each do |rec| %>
-    <h2><%= rec.name %></h2>
-    <p><%= rec.description %></p>
-    <p>This recipe is found in <%= rec.menus.count %> menus.</p>
+  <% @recipes.each do |recipe| %>
+    <h2><%= link_to recipe.name, recipe %></h2>
+    <p><%= recipe.description %></p>
+    <p>This recipe is found in <%= recipe.menus.count %> menus.</p>
   <% end %>
 <% end %>
