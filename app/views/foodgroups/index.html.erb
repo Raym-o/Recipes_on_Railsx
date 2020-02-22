@@ -2,7 +2,7 @@
  <p>There are no foodgroups available to preview.</p>
 <% else %>
   <% @foodgroups.each do |foodgroup| %>
-    <h2><%= foodgroup.name %></h2>
+    <h2><%= link_to foodgroup.name, foodgroup %></h2>
     <p><%= foodgroup.suggested_serving %></p>
     <p>This foodgroup is found contains <%= foodgroup.ingredients.count %> ingredients.</p>
   <% end %>
