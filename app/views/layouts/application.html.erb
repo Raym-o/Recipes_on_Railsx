@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>RecipesOnRailsx</title>
+    <title>Recipes on Rails</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -10,6 +10,17 @@
   </head>
 
   <body>
-    <%= yield %>
+    <div class="container">
+      <header>
+        <h1>Recipe Repository</h1>
+        <p><%= link_to 'Home', root_path %></p>
+      </header>
+      <%= yield %>
+    <footer>
+      <%= link_to 'Home', root_path %>
+      <br>
+      Copywrong RecipesOnRailsx 2020
+    </footer>
+    </div>
   </body>
 </html>
