@@ -3,7 +3,7 @@
 class RecipesController < ApplicationController
   # GET /
   def index
-    @recipes = Recipe.all
+    @recipes = Recipe.order(:name)
   end
 
   #

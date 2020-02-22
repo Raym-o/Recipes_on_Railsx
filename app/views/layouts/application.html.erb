@@ -13,7 +13,13 @@
     <div class="container">
       <header>
         <h1>Recipe Repository</h1>
-        <p><%= link_to 'Home', root_path %></p>
+        <p>
+          <%= link_to 'Home', root_path %> |
+          <%= link_to 'Recipes', recipes_path %> |
+          <%= link_to 'Menus', menus_path %> |
+          <%= link_to 'Ingredients', ingredients_path %> |
+          <%= link_to 'Foodgroups', foodgroups_path %>
+        </p>
       </header>
       <%= yield %>
     <footer>
