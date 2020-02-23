@@ -1,13 +1,13 @@
 <h2 class="subtitle is-2">Requested Menu</h2>
-<%= render @menu %>
-<br>
-<h3 class="subtitle is-3">Recipes in this Menu</h3>
-<% if @menu.recipes.empty? %>
-  <p class="subtitle is-5">There are no recipes to display</p>
-<% else %>
-  <ul>
-    <% @menu.recipes.each do |recipe| %>
-      <li class="subtitle is-5"><%= recipe.name %></li>
-    <% end %>
-  </ul>
-<% end %>
+<div>
+  <%= render @menu %>
+  <br>
+  <h3 class="subtitle is-3">Recipes in this Menu</h3>
+  <% if @menu.recipes.empty? %>
+    <p class="subtitle is-5">There are no recipes to display</p>
+  <% else %>
+    <div class="columns is-multiline">
+      <%= render @menu.recipes %>
+    </div>
+  <% end %>
+</div>
