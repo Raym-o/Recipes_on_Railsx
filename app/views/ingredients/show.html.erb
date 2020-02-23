@@ -1,14 +1,14 @@
-<h1>Requested Ingredient</h1>
+<h1 class="subtitle is-2">Requested Ingredient</h1>
 <%= render @ingredient %>
 <br>
-<h2>This ingredient belongs to the <%= @ingredient.foodgroup.name %> foodgroup.</h2>
+<h2 class="subtitle is-3">This ingredient belongs to the <%= @ingredient.foodgroup.name %> foodgroup.</h2>
 <h3>Recipes using this Ingredient</h3>
 <% if @ingredient.recipes.empty? %>
-  <p>There are no recipes to display</p>
+  <p class="subtitle is-5">There are no recipes to display</p>
 <% else %>
   <ul>
     <% @ingredient.recipes.each do |recipe| %>
-      <li><%= link_to recipe.name, recipe %></li>
+      <li class="subtitle is-5"><%= link_to recipe.name, recipe %></li>
     <% end %>
   </ul>
 <% end %>

@@ -1,13 +1,13 @@
-<h2>Requested Foodgroup</h2>
+<h2 class="subtitle is-2">Requested Foodgroup</h2>
 <%= render @foodgroup %>
 <br>
-<h3>Ingredients from this Foodgroup</h3>
+<h3 class="subtitle is-3">Ingredients from this Foodgroup</h3>
 <% if @foodgroup.ingredients.empty? %>
-  <p>There are no ingredients to display</p>
+  <p class="subtitle is-5">There are no ingredients to display</p>
 <% else %>
   <ul>
     <% @foodgroup.ingredients.each do |ingredient| %>
-      <li><%= ingredient.name %></li>
+      <li class="subtitle is-5"><%= ingredient.name %></li>
     <% end %>
   </ul>
 <% end %>
