@@ -1,5 +1,7 @@
 <% if @ingredients.empty? %>
  <p class="subtitle is-5">There are no ingredients available to preview.</p>
 <% else %>
-  <%= render @ingredients %>
+  <div class="columns is-multiline">
+    <%= render @ingredients %>
+  </div>
 <% end %>

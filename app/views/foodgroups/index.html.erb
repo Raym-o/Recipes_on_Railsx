@@ -1,5 +1,7 @@
 <% if @foodgroups.empty? %>
  <p class="subtitle is-5">There are no foodgroups available to preview.</p>
 <% else %>
-  <%= render @foodgroups %>
+  <div class="columns is-multiline">
+    <%= render @foodgroups %>
+  </div>
 <% end %>

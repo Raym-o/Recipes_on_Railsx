@@ -1,5 +1,7 @@
 <% if @menus.empty? %>
  <p class="subtitle is-5">There are no menus available to preview.</p>
 <% else %>
-  <%= render @menus %>
+  <div class="columns is-multiline">
+    <%= render @menus %>
+  </div>
 <% end %>
