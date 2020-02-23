@@ -1,9 +1,5 @@
 <% if @foodgroups.empty? %>
  <p class="subtitle is-5">There are no foodgroups available to preview.</p>
 <% else %>
-  <% @foodgroups.each do |foodgroup| %>
-    <h2 class="subtitle is-5"><%= link_to foodgroup.name, foodgroup %></h2>
-    <p class="subtitle is-6"><%= foodgroup.suggested_serving %></p>
-    <p class="subtitle is-6">This foodgroup contains <%= foodgroup.ingredients.count %> ingredients.</p>
-  <% end %>
+  <%= render @foodgroups %>
 <% end %>

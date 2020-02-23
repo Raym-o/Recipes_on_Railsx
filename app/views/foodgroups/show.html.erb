@@ -5,11 +5,7 @@
 <% if @foodgroup.ingredients.empty? %>
   <p class="subtitle is-5">There are no ingredients to display</p>
 <% else %>
-  <ul>
-    <% @foodgroup.ingredients.each do |ingredient| %>
-      <li class="subtitle is-5"><%= ingredient.name %></li>
-    <% end %>
-  </ul>
+  <%= render @foodgroup.ingredients %>
 <% end %>
 
 <p>
