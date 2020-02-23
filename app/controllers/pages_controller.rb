@@ -1,5 +1,14 @@
+# frozen_string_literal: true
+
 class PagesController < ApplicationController
-  before_action :set_page, only: [:show, :edit, :update, :destroy]
+  http_basic_authenticate_with name: 'admin', password: 'p@ssw0rd'
+  before_action :set_page, only: %i[show edit update destroy]
+
+  def permalink
+    @page = Page.find_by(permalink: params[:permalink])
+
+    redirect_to root_path if @page.nil?
+  end
 
   # GET /pages
   # GET /pages.json
@@ -9,8 +18,7 @@ class PagesController < ApplicationController
 
   # GET /pages/1
   # GET /pages/1.json
-  def show
-  end
+  def show; end
 
   # GET /pages/new
   def new
@@ -18,8 +26,7 @@ class PagesController < ApplicationController
   end
 
   # GET /pages/1/edit
-  def edit
-  end
+  def edit; end
 
   # POST /pages
   # POST /pages.json
@@ -62,13 +69,14 @@ class PagesController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_page
-      @page = Page.find(params[:id])
-    end
 
-    # Only allow a list of trusted parameters through.
-    def page_params
-      params.require(:page).permit(:title, :content, :permalink)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_page
+    @page = Page.find(params[:id])
+  end
+
+  # Only allow a list of trusted parameters through.
+  def page_params
+    params.require(:page).permit(:title, :content, :permalink)
+  end
 end

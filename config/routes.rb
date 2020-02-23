@@ -4,6 +4,8 @@ Rails.application.routes.draw do
   # Generates all 7 restful routes
   resources :pages
 
+  get '/p/:permalink', to: 'pages#permalink', as: 'permalink', except: :permalink
+
   # GET /ingredients/ => ingredients#index
   get 'ingredients/index', as: 'ingredients'
 

@@ -2,6 +2,7 @@
 
 require 'rest-client'
 
+Page.destroy_all
 RecipeIngredient.destroy_all
 RecipeMenu.destroy_all
 Recipe.destroy_all
@@ -19,7 +20,7 @@ FOOD_GROUPS = [
 ].freeze
 
 FOOD_GROUPS.each do |food|
-  Foodgroup.create(name: food[:name], suggested_serving: food[:suggested_daily_intake])
+  Foodgroup.create(name: food[:name], suggested_serving: food[:suggested_serving])
 end
 
 20.times do
@@ -64,6 +65,8 @@ Menu.all.each do |mnu|
     end
   end
 end
+
+Page.create(title: 'About', content: 'Fill this in.', permalink: 'about_us')
 
 puts "Created #{Recipe.count} Recipes"
 puts "Created #{Ingredient.count} Ingredients"
