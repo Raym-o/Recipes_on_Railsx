@@ -2,7 +2,8 @@
  <p>There are no menus available to preview.</p>
 <% else %>
   <% @menus.each do |menu| %>
-   <%= render menu %>
+    <h2><%= link_to menu.name, menu %></h2>
+    <p><%= menu.description %></p>
     <p>This menu contains <%= menu.recipes.count %> recipes.</p>
   <% end %>
 <% end %>
