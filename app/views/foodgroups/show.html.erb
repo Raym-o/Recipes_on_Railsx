@@ -1,6 +1,5 @@
 <h2>Requested Foodgroup</h2>
-<h3><%= @foodgroup.name %></h3>
-<p>Suggested Daily Serving: <%= @foodgroup.suggested_serving %></p>
+<%= render @foodgroup %>
 <br>
 <h3>Ingredients from this Foodgroup</h3>
 <% if @foodgroup.ingredients.empty? %>
