@@ -1,9 +1,9 @@
 <% if @ingredients.empty? %>
- <p>There are no ingredients available to preview.</p>
+ <p class="subtitle is-5">There are no ingredients available to preview.</p>
 <% else %>
   <% @ingredients.each do |ingredient| %>
-    <h2><%= link_to ingredient.name, ingredient %></h2>
-    <p><%= ingredient.description %></p>
-    <p>This ingredient is found in <%= ingredient.recipes.count %> recipes.</p>
+    <h2 class="subtitle is-5"><%= link_to ingredient.name, ingredient %></h2>
+    <p class="subtitle is-6"><%= ingredient.description %></p>
+    <p class="subtitle is-6">This ingredient is found in <%= ingredient.recipes.count %> recipes.</p>
   <% end %>
 <% end %>
