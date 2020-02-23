@@ -6,9 +6,5 @@
 <% if @ingredient.recipes.empty? %>
   <p class="subtitle is-5">There are no recipes to display</p>
 <% else %>
-  <ul>
-    <% @ingredient.recipes.each do |recipe| %>
-      <li class="subtitle is-5"><%= link_to recipe.name, recipe %></li>
-    <% end %>
-  </ul>
+  <%= render @ingredient.recipes %>
 <% end %>
