@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_02_21_231225) do
+ActiveRecord::Schema.define(version: 2020_02_23_023926) do
 
   create_table "foodgroups", force: :cascade do |t|
     t.string "name"
@@ -31,6 +31,14 @@ ActiveRecord::Schema.define(version: 2020_02_21_231225) do
   create_table "menus", force: :cascade do |t|
     t.string "name"
     t.text "description"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "pages", force: :cascade do |t|
+    t.string "title"
+    t.text "content"
+    t.string "permalink"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

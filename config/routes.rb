@@ -1,6 +1,9 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
+  # Generates all 7 restful routes
+  resources :pages
+
   # GET /ingredients/ => ingredients#index
   get 'ingredients/index', as: 'ingredients'
 
