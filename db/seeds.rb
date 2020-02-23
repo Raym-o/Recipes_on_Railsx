@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 require 'rest-client'
+require 'faker'
 
 Page.destroy_all
 RecipeIngredient.destroy_all
@@ -31,7 +32,7 @@ end
 
   foodgrp = Foodgroup.first
   data.each do |datum|
-    rec = Recipe.create(name: datum['title'], description: datum['ingredients'])
+    rec = Recipe.create(name: datum['title'], description: Faker::Food.description)
     array = datum['ingredients'].split(', ')
     array.each do |index|
       Ingredient.create(name: index, foodgroup: foodgrp)

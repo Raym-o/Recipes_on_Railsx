@@ -1,6 +1,5 @@
 <h2>Requested Recipe</h2>
-<h3><%= @recipe.name %></h3>
-<p><%= @recipe.description %></p>
+<%= render @recipe %>
 
 <h3>Menus including this Recipe</h3>
 <% if @recipe.menus.empty? %>
