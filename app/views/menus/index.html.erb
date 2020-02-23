@@ -1,9 +1,5 @@
 <% if @menus.empty? %>
  <p class="subtitle is-5">There are no menus available to preview.</p>
 <% else %>
-  <% @menus.each do |menu| %>
-    <h2 class="subtitle is-5"><%= link_to menu.name, menu %></h2>
-    <p class="subtitle is-6"><%= menu.description %></p>
-    <p class="subtitle is-6">This menu contains <%= menu.recipes.count %> recipes.</p>
-  <% end %>
+  <%= render @menus %>
 <% end %>
