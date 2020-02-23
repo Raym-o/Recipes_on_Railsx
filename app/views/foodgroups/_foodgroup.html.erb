@@ -1,2 +1,8 @@
-<p><%= link_to foodgroup.name, foodgroup %></p>
-<p>Suggested Daily Serving: <%= @foodgroup.suggested_serving %></p>
+<div class="card">
+  <div class="card-content">
+    <p class="title"><%= link_to foodgroup.name, foodgroup %></p>
+  </div>
+  <footer class="card-footer">
+    <p class="card-footer-item">Suggested Daily Serving: <%= @foodgroup.suggested_serving %></p>
+  </footer>
+</div>
