@@ -1,2 +1,8 @@
-<p><%= link_to menu.name, menu %></p>
-<p><%= menu.description %></p>
+<div class="card">
+  <div class="card-content">
+    <p class="title"><%= link_to menu.name, menu %></p>
+  </div>
+  <footer class="card-footer">
+    <p class="card-footer-item">Description: <%= @menu.description %></p>
+  </footer>
+</div>
