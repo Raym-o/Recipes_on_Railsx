@@ -4,6 +4,7 @@
   <% @recipes.each do |recipe| %>
     <h2><%= link_to recipe.name, recipe %></h2>
     <p><%= recipe.description %></p>
-    <p>This recipe is found in <%= recipe.menus.count %> menus.</p>
+    <p>See menus containing this <%= link_to 'recipe', menus_path(recipe_id: recipe) %>.
+    </p>
   <% end %>
 <% end %>
