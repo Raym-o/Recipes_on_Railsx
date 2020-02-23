@@ -5,5 +5,7 @@
 <% if @recipe.menus.empty? %>
   <p class="subtitle is-5">There are no menus to display</p>
 <% else %>
-  <%= render @recipe.menus %>
+  <div class="columns is-multiline"></div>
+    <%= render @recipe.menus %>
+  </div>
 <% end %>

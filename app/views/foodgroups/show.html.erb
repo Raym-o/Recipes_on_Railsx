@@ -5,9 +5,10 @@
 <% if @foodgroup.ingredients.empty? %>
   <p class="subtitle is-5">There are no ingredients to display</p>
 <% else %>
-  <%= render @foodgroup.ingredients %>
+  <div class="columns is-multiline">
+    <%= render @foodgroup.ingredients %>
+  </div>
 <% end %>
-
 <p>
   <%= link_to 'back to foodgroups', 'index' %>
 </p>
