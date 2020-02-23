@@ -4,30 +4,33 @@
     <title>Recipes on Rails</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css">
   </head>
 
   <body>
-    <div class="container">
-      <header>
-        <h1>Recipe Repository</h1>
-        <p>
-          <%= link_to 'Home', root_path %> |
-          <%= link_to 'Recipes', recipes_path %> |
-          <%= link_to 'Menus', menus_path %> |
-          <%= link_to 'Ingredients', ingredients_path %> |
-          <%= link_to 'Foodgroups', foodgroups_path %> |
-          <%= link_to 'About', permalink_path('about_us') %>
-        </p>
-      </header>
-      <%= yield %>
-    <footer>
-      <%= link_to 'Home', root_path %>
-      <br>
-      Copywrong RecipesOnRailsx 2020
-    </footer>
-    </div>
+    <section class="section">
+      <div class="container">
+        <header>
+          <h1 class="title is-1">Recipe Repository</h1>
+          <p>
+            <%= link_to 'Home', root_path %> |
+            <%= link_to 'Recipes', recipes_path %> |
+            <%= link_to 'Menus', menus_path %> |
+            <%= link_to 'Ingredients', ingredients_path %> |
+            <%= link_to 'Foodgroups', foodgroups_path %> |
+            <%= link_to 'About', permalink_path('about_us') %>
+          </p>
+        </header>
+        <%= yield %>
+        <footer>
+          <%= link_to 'Home', root_path %>
+          <br>
+          Copywrong RecipesOnRailsx 2020
+        </footer>
+      </div>
+    </section>
   </body>
 </html>
