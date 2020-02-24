@@ -1,5 +1,5 @@
 <h2 class="subtitle is-2">Requested Recipe</h2>
-<%= render @recipe, params: { column_full: '' } %>
+<%= render @recipe, params: {column_full: '', no_link: ''} %>
 <br>
 <h3 class="subtitle is-3">Menus including this Recipe</h3>
 <% if @recipe.menus.empty? %>

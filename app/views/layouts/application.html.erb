@@ -24,9 +24,17 @@
             <%= link_to 'About', permalink_path('about_us') %>
           </p>
         </header>
+        <%= render 'recipes/search' %>
         <%= yield %>
-        <footer>
-          <%= link_to 'Home', root_path %>
+        <footer class="container">
+          <p>
+            <%= link_to 'Home', root_path %> |
+            <%= link_to 'Recipes', recipes_path %> |
+            <%= link_to 'Menus', menus_path %> |
+            <%= link_to 'Ingredients', ingredients_path %> |
+            <%= link_to 'Foodgroups', foodgroups_path %> |
+            <%= link_to 'About', permalink_path('about_us') %>
+          </p>
           <br>
           Copywrong RecipesOnRailsx 2020
         </footer>
